@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Wasm Example</title>
+</head>
+<body>
+
+    <!-- Include the Wasm file -->
+    <script type="module">
+        import init from './pkg/html_insert_rust.js';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            //
+            init().then(module => {
+                // Run the Wasm module
+                for(let i=0; i< 10; i++) {
+                    module.web_bench();
+                }
+            });
+        });
+
+    </script>
+
+    <div id="container"></div>
+
+</body>
+</html>

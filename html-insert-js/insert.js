@@ -1,12 +1,13 @@
 // Define a function in the JavaScript file
 
 function web_bench() {
+    let begin = Date.now(); //ms
+    
     let container = document.getElementById("container");
     while (container.lastChild){
         container.removeChild(container.lastChild);
     }
     
-    let begin = Date.now(); //ms
     for(let i = 0; i < 10000; i += 1) {
       let str = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
         "123456789012345678901234567890123456abcd123456789012345678901234567890123456789012345678901234567890" +
